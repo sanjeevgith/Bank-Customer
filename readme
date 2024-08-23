@@ -1,0 +1,41 @@
+npm inatall
+
+run:  node server.js
+
+
+post
+http://localhost:4000/auth/register
+{
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "role": "banker" // or "banker","customer"
+}
+
+post
+http://localhost:4000/auth/login
+{
+    "usernameOrEmail": "admin",
+    "password": "admin"
+}
+
+post
+http://localhost:4000/customer/deposit  //with token //for both customer banker
+{
+    "amount": 100
+}
+
+get
+http://localhost:4000/customer/transactions //with token  //for both customer banker
+
+post
+http://localhost:4000/customer/withdrawal  //with token //for both customer banker
+{
+    "amount": 50
+}
+
+get
+http://localhost:4000/banker/accounts //with token //all account 
+
+get
+http://localhost:4000/banker/accounts/66c8226de3431f35c07c100b //getaccount details by id //with token
